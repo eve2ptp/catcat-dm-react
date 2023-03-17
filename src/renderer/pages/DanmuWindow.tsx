@@ -451,9 +451,10 @@ class DanmuWindow extends React.Component {
 
   getAudioFromServer = (text: string) => {
     const { muaConfig } = this.state;
+    const speakText = `${dm.nickname}说${text}`;
     const data = {
       token: muaConfig.ttsServerToken,
-      text,
+      text: speakText,
     };
     axios({
       method: 'post',
